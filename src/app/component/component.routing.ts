@@ -48,8 +48,8 @@ export const ComponentsRoutes: Routes = [
         path: 'alert',
         component: NgbdAlertBasic,
         data: {
-          title: 'Ofertas',
-          urls: [{ title: 'Home', url: '/dashboard' }, { title: 'Configurações' }, { title: 'Ofertas' }]
+          title: 'Licitações',
+          urls: [{ title: 'Home', url: '/dashboard' }, { title: 'Configurações' }, { title: 'Licitações' }]
         }
       },
       {
