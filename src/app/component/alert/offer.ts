@@ -1,7 +1,7 @@
 export class Offer {
-    id_company: string;
-    id_bidding: string;
-    price_unit : string;
-    lat: string;
-    lng: string;
+    id_company: String;
+    id_bidding: String;
+    price_unit : String;
+    lat: String;
+    lng: String;
 }

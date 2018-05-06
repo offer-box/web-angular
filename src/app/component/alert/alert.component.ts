@@ -30,7 +30,7 @@ export class NgbdAlertBasic {
 
   closeResult: string;
   biddingSelected: Bidding;
-  offer: Offer;
+  public offer: Offer;
 
   public apiGet: string = "https://hacka-compras-publicas.herokuapp.com/list_bidding_by_product/all";
 
@@ -45,24 +45,22 @@ export class NgbdAlertBasic {
     let url = this.apiGet;
 
     this.http.get(url).subscribe((res) => {
-      console.log(res.json())
+      // console.log(res.json())
       this.biddings = res.json();
       
     });
-
-
   }
 
-
   open2(content, _id) { 
+
+    this.getGeolocation();
 
     for(let bidding of this.biddings) {
       if(bidding._id == _id) {
         this.biddingSelected = bidding;
+        this.offer.id_bidding = String(bidding._id);
       }
     }
-
-
     this.modalService.open(content).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -80,25 +78,27 @@ export class NgbdAlertBasic {
     }
   }
 
-  ngOnInit() { 
-
-    this.offer = new Offer();
-    this.offer.lat = "";
-    this.getGeolocation();
-
+  public save() {
+    
   }
 
-  public getGeolocation() {
-    navigator.geolocation.getCurrentPosition(this.showPosition);
+  ngOnInit() { 
+    this.offer = new Offer();
+    this.offer.id_company = "05834991000121";
   }
  
-  public showPosition(position) {
-    this.offer = new Offer();
-    console.log(position.coords.latitude);
+  public getGeolocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.showPosition(position);
+      });
+    }
+  } 
+
+  public showPosition(position){    
     this.offer.lat = String(position.coords.latitude);
     this.offer.lng = String(position.coords.longitude);
   }
-
 }
 
 
