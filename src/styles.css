@@ -16,4 +16,17 @@
     border-radius: 5px;
     padding: 3px;
 }
-
+.navbar-header {
+    border: solid;
+    color: white;
+    border-radius: 15px;
+}
+.modal-title {
+    color: white;
+}
+.modal-header {
+    background-color: black;
+}
+button.close {
+    color: red;
+}

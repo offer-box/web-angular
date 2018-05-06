@@ -5,32 +5,37 @@
             <!-- column -->
             <div class="col-lg-3 col-md-6" *ngFor="let bidding of biddings; let i = index">
                 <!-- Card -->
-                <div class="card" >
+                <div class="card">
                     <img class="card-img-top img-responsive" src="https://eauctionassistant.com/wp-content/uploads/2017/12/auctiongavelpng.png"
                         alt="Card image cap">
+                    <hr>
                     <div class="card-body">
                         <h4 class="card-title">
-                            Produto: {{bidding.product}}
-                            <br />Quantidade: {{bidding.qtd}}
-                            <br />ID: {{bidding._id}}
+                            <b>Produto</b>: {{bidding.product}}
+                            <br />
+                            <br />
+                            <b>Quantidade</b>: {{bidding.qtd}}
+                            <br />
+                            <br />
+                            <b>ID</b>: {{bidding._id}}
 
                         </h4>
                         <p class="card-text"></p>
 
-                       
+
                         <ng-template #content let-c="close" let-d="dismiss">
                             <div class="modal-header">
-                            <h4 class="modal-title">Modal title</h4>
-                            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                                <h4 class="modal-title">Oferta</h4>
+                                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
                             <div class="modal-body">
                                 <div class="row">
 
 
                                     <div class="col-4">
-                                        _id
+                                        id
                                     </div>
                                     <div class="col-8">
                                         {{biddingSelected._id}}
@@ -61,59 +66,59 @@
                                     </div>
                                     <div class="col-4">
                                         id_company
-                                    </div>    
+                                    </div>
                                     <div class="col-8">
                                         <input name="id_company" type="text" [(ngModel)]="offer.id_company">
                                     </div>
-                                    
+
                                     <div class="col-4">
                                         id_bidding
-                                    </div>    
+                                    </div>
                                     <div class="col-8">
                                         <input name="id_bidding" type="text" [(ngModel)]="offer.id_bidding" value="biddingSelected._id">
                                     </div>
 
                                     <div class="col-4">
                                         price_unit
-                                    </div>    
+                                    </div>
                                     <div class="col-8">
-                                        <input name="price_unit" type="text" [(ngModel)]="offer.price_unit" >
+                                        <input name="price_unit" type="text" [(ngModel)]="offer.price_unit">
                                     </div>
 
                                     <div class="col-4">
                                         lat {{offer.lat}}
-                                    </div>    
-                                    
+                                    </div>
+
                                     <div class="col-8">
-                                        <input name="lat" type="text" [(ngModel)]="offer.lat" >
+                                        <input name="lat" type="text" [(ngModel)]="offer.lat">
                                     </div>
 
                                     <div class="col-4">
                                         lng
-                                    </div>    
+                                    </div>
                                     <div class="col-8">
-                                        <input name="lng" type="text" [(ngModel)]="offer.lng" >
+                                        <input name="lng" type="text" [(ngModel)]="offer.lng">
                                     </div>
 
-                                    
+
 
                                 </div>
                             </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+                                <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
                             </div>
                         </ng-template>
-        
+
                         <button class="btn btn-lg btn-outline-primary" (click)="open2(content, bidding._id)">Ofertar</button>
                         <div class="m-t-20">{{closeResult}}</div>
-                            
+
                     </div>
                 </div>
                 <!-- Card -->
             </div>
             <!-- column -->
             <!-- column -->
-          
+
             <!-- column -->
         </div>
         <!-- Row -->
