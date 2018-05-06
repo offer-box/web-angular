@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+
+.ps .ps__scrollbar-y-rail {
+    left: 3px;
+    right: auto;
+}
+#cardPerfil {
+    max-width: 100%;
+}
+#nuvem {
+    float: left;
+    margin: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 3px;
+}

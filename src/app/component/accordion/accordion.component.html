@@ -1,0 +1,47 @@
+<div class="col-md-6" id="cardPerfil">
+	<div class="card card-outline-primary">
+		<div class="card-header">
+			<h4 class="m-b-0 text-white">Informações</h4>
+		</div>
+		<div class="card-body">
+			<form>
+				<div>
+					<h3 class="card-title">Para continuar utilizando nossos serviços, preencha os campos obrigatórios.</h3>
+					CNPJ
+					<br />
+					<input name="cnpj" type="text" [(ngModel)]="cnpj">
+
+					<div *ngIf=" cnpjValido == false">
+						<br />
+						<button (click)="submit(cnpj)" type="submit" class="btn btn-outline-primary">Buscar</button>
+					</div>
+					<br />
+				</div>
+
+
+				<div *ngIf="cnpjValido == true">
+					Nome da empresa
+					<br />
+					<input disabled name="nomeEmpresa" type="text" [(ngModel)]="nomeEmpresa">
+					<br /> Porte da empresa
+					<br />
+					<input disabled name="porteEmpresa" type="text" [(ngModel)]="porteEmpresa" />
+					<br />
+					<br />
+					<b>Selecione as Tags que se encaixa com seu ramo</b>.
+					<br />
+					<div id="nuvem" *ngFor="let item of tags; let i = index">
+						<input name="tag" id="{{item.description}}" (click)="verifyCheckBox($event);" type="checkbox">{{item.description}}
+					</div>
+					<br />
+					<br />
+				</div>
+				<div style="clear: both;"></div>
+				<br />
+				<div *ngIf="cnpjValido == true">
+					<button (click)="save()" type="button" class="btn btn-success">Salvar</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
