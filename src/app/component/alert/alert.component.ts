@@ -79,7 +79,11 @@ export class NgbdAlertBasic {
   }
 
   public save() {
-    
+    let url = "https://hacka-compras-publicas.herokuapp.com/save_offer";
+
+    this.http.post(url, this.offer).subscribe((res) => {
+      console.log(res.json())
+    });
   }
 
   ngOnInit() { 
