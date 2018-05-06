@@ -101,11 +101,12 @@ export class NgbdAccordionBasic implements OnInit {
     let name_company = this.nomeEmpresa;
     let type_company = this.porteEmpresa;
 
+    var tags : any[];
+    tags = new Array<any>();
     for (let item of this.elementsCheckBox) {
-      var tags = item;
-      var checked = item.checked;
-      var description = item.description
+      tags.push({"checked": item.checked, "description": item.description})
     }
+
     this.http.post(url, { cnpj, name_company, type_company, tags }).subscribe((res) => {
       console.log(res.json())
     });
