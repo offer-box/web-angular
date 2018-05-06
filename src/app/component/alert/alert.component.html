@@ -81,7 +81,7 @@
                                     </div>
 
                                     <div class="col-4">
-                                        lat {{offer.lat}}
+                                        lat 
                                     </div>    
                                     
                                     <div class="col-8">
@@ -94,13 +94,11 @@
                                     <div class="col-8">
                                         <input name="lng" type="text" [(ngModel)]="offer.lng" >
                                     </div>
-
-                                    
-
                                 </div>
                             </div>
                             <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+                                <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>
+                                <button type="button" class="btn btn-secondary" (click)="save()">Close</button>
                             </div>
                         </ng-template>
         
